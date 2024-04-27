@@ -1,3 +1,0 @@
-[submodule "extern/city"]
-	path = extern/city
-	url = https://github.com/mcordts/cityscapesScripts.git
