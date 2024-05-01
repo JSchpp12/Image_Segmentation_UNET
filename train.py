@@ -1,6 +1,3 @@
-import torch
-import torch.nn as nn
-from tqdm import tqdm
 from utils import convert_label_to_rgb 
 import torchvision.transforms as transforms
 from model import multi_unet_model
@@ -14,7 +11,6 @@ from ohe import Ohe
 import matplotlib.pyplot as plt
 
 LEARNING_RATE = 1e-4
-DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 BATCH_SIZE = 16
 NUM_EPOCHS = 3
 NUM_WORKERS = 2
