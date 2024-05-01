@@ -1,0 +1,15 @@
+{
+    "image" : "tensorflow/tensorflow:latest-gpu-jupyter",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "donjayamanne.python-extension-pack",
+                "ms-toolsai.jupyter"
+            ]
+        }
+    },
+    "runArgs": [
+        "--gpus",
+        "all"
+    ]
+}
