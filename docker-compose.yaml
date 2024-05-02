@@ -1,0 +1,15 @@
+version: "2.0"
+services: 
+  jupyter-lab:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./med-img-final-proj:/med-img-final-proj
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

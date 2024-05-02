@@ -1,7 +1,6 @@
 from utils import convert_label_to_rgb 
 import torchvision.transforms as transforms
 from model import multi_unet_model
-import torch.optim as optim
 import tensorflow as tf
 import keras
 import os
@@ -16,7 +15,6 @@ NUM_EPOCHS = 3
 NUM_WORKERS = 2
 PIN_MEMORY = True
 LOAD_MODEL = False
-
 
 model = multi_unet_model(n_classes=22, IMG_HEIGHT=224, IMG_WIDTH=224, IMG_CHANNELS=3)
 loss = keras.losses.CategoricalCrossentropy()
