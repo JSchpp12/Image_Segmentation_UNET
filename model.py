@@ -10,7 +10,7 @@ from keras.models import Model
 from keras.layers import Input, Conv2D, MaxPooling2D, UpSampling2D, concatenate, Conv2DTranspose, BatchNormalization, Dropout, Lambda
 from keras import backend as K
 from torchvision.transforms import transforms as transforms 
-from dataset import PASCAL2007Dataset
+# from dataset import PASCAL2007Dataset
 from ohe import Ohe
 import numpy as np
 
