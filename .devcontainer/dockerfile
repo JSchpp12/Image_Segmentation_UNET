@@ -1,22 +1,4 @@
 FROM tensorflow/tensorflow:latest-gpu-jupyter
 
-ENV CONDA_DIR /root/miniconda3/bin
-
-# COPY env_requirements2.txt env_requirements2.txt 
-COPY environment.yml environment.yml
-
-RUN apt-get update \ 
-    && apt-get upgrade -y \
-    && apt-get install -y libcairo2-dev pkg-config python3-dev wget
-
-RUN mkdir -p ~/miniconda3 \ 
-    && wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh \ 
-    && bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3 \ 
-    && rm -rf ~/miniconda3/miniconda.sh \ 
-    && ~/miniconda3/bin/conda init bash
-
-ENV PATH=$CONDA_DIR/bin:$PATH
-
-COPY setup.sh setup.sh
- 
-RUN bash setup.sh
+RUN pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 \ 
+    && pip3 install pandas numpy matplotlib pillow 
