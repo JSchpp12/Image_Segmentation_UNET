@@ -16,4 +16,4 @@ RUN groupadd --gid $USER_GID $USERNAME \
 USER $USERNAME
 
 RUN pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 \ 
-    && pip3 install pandas numpy matplotlib pillow cityscapesscripts ipykernel
+    && pip3 install pandas numpy matplotlib pillow cityscapesscripts ipykernel tensorboard-plugin-profile
