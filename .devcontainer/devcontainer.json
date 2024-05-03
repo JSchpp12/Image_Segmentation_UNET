@@ -1,11 +1,13 @@
 {
     "build" : {"dockerfile": "dockerfile"}, 
+    "containerUser": "jschaupp",
     "customizations": {
         "vscode": {
             "extensions": [
                 "donjayamanne.python-extension-pack",
                 "ms-toolsai.jupyter",
-                "mhutchie.git-graph"
+                "mhutchie.git-graph",
+                "ms-toolsai.tensorboard"
             ]
         }
     },

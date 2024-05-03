@@ -101,10 +101,6 @@ def calculate_label_encoding(label_image):
     indicies = tf.reshape(indicies, (224, 224))
     indicies = tf.one_hot(indicies, 22)
     return indicies
-    
-    
-# img = get_label_image(tf.constant("data/pascal/train_JPEGImages/000032.jpg"))
-# label = calculate_label_encoding(img)
 
 def process_path(path): 
     image = tf.io.read_file(path)
@@ -136,34 +132,3 @@ tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=os.getcwd(), histo
 
 model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
 model.fit(train_ds, validation_data=val_ds, epochs=NUM_EPOCHS, callbacks=[tensorboard_callback])
-
-# for images,labels in train_ds.take(1): 
-#     for i in range(1):
-#         ax = plt.subplot(3, 3, i + 1)
-#         plt.imshow(images[i].numpy().astype("uint8"))
-#         plt.axis("off")
-# print('test')
-
-# train_indices = os.listdir(train_dir)
-# train_indices = list(map(lambda x: x[:x.index('.')], train_indices))
-
-# val_indices = os.listdir(val_dir)
-# val_indices = list(map(lambda x: x[:x.index('.')], val_indices))
-
-
-# x = PASCAL2007Dataset(image_dir=train_dir, mask_dir=mask_dir, transform=transform)
-
-# images = []
-# masks = []
-# for f in train_indices[:16]:
-#     img_mask = x[f]
-#     images.append(np.array(img_mask['image']))
-#     mask = np.array(img_mask['mask'])
-#     y = Ohe(mask, 22)
-#     mask_ohe = y.one_hot_encoded_mask()
-#     masks.append(mask_ohe)
-
-# images = np.array(images)
-# masks = np.array(masks)
-
-#print(images.shape, masks.shape)
